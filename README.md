@@ -2,7 +2,7 @@
 
 DevCloud Appliance for Mac OS (Apple Silicon) CloudStack-KVM development and testing.
 
-This is a specially built VM appliance that can run on Mac OS 15+ with M3 or newer chip. The VM appliance is run as a KVM host and NFS server, while the host OS (Mac) is used to run CloudStack management/usage server, MySQL database, and npm/UI server, as well as IDEs and other tools for (CloudStack development](https://github.com/shapeblue/hackerbook/blob/main/2-dev.md). Advanced users may also use the appliance to create all-in-a box setup to try out CloudStack while on Mac.
+This is a specially built VM appliance that can run on Mac OS 15+ with M3 or newer chip. The VM appliance is run as a KVM host and NFS server, while the host OS (Mac) is used to run CloudStack management/usage server, MySQL database, and npm/UI server, as well as IDEs and other tools for [CloudStack development](https://github.com/shapeblue/hackerbook/blob/main/2-dev.md). Advanced users may also use the appliance to create all-in-a box setup to try out CloudStack while on Mac.
 
 The x86/Linux users and developers, can continue to use mbx: https://github.com/shapeblue/mbx or DIY their own appliance.
 
@@ -35,4 +35,5 @@ Advanced DIY users and developers can use the following to build their own:
 * Create a new VM using the downloaded ISO and select "Apple Virtualisation", and at least 4 CPU cores and 4GB RAM and 100G disk on shared network
 * UTM shared network is usually on the host-only subnet: `192.168.64.0/24`, otherwise using `ifconfig` on Mac Terminal to find the bridge/network
 * Install Fedora Server, and other dependencies as they would on a rpm/EL-based distro to use the appliance as a KVM host, or all-in-a-box to build test CloudStack deployment.
+* If ACS rpms aren't installing, such as case with cloudstack-common, try `rpm -ivh cloudstack-common*.rpm --nodeps`
 * Note: before deploying the zone, please seed the ARM64/aarch64 systemvmtemplate on the NFS/secondary storage. Such as: https://download.cloudstack.org/systemvm/4.20/systemvmtemplate-4.20.0-aarch64-kvm.qcow2.bz2 for ACS 4.20.0.
