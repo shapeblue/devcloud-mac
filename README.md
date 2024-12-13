@@ -30,10 +30,11 @@ TODO: (to test/fix)
 Advanced DIY users and developers can use the following to build their own:
 
 * Download Fedora or similar distro's AARCH64/ARM64 ISO which has latest Linux kernel with support for M-series CPU & KVM
-* Example, ISO URL: https://archive.fedoraproject.org/pub/fedora/linux/releases/41/Server/aarch64/iso/
+* Example, ISO URL: https://archive.fedoraproject.org/pub/fedora/linux/releases/41/Server/aarch64/iso/ or https://cdimage.ubuntu.com/releases/24.04/release/ubuntu-24.04.1-live-server-arm64.iso
 * Download and install UTM 4.6 or later
 * Create a new VM using the downloaded ISO and select "Apple Virtualisation", and at least 4 CPU cores and 4GB RAM and 100G disk on shared network
 * UTM shared network is usually on the host-only subnet: `192.168.64.0/24`, otherwise using `ifconfig` on Mac Terminal to find the bridge/network
 * Install Fedora Server, and other dependencies as they would on a rpm/EL-based distro to use the appliance as a KVM host, or all-in-a-box to build test CloudStack deployment.
-* If ACS rpms aren't installing, such as case with cloudstack-common, try `rpm -ivh cloudstack-common*.rpm --nodeps`
+* For Ubuntu based appliance, you can follow the storage & KVM host setup sections from https://rohityadav.cloud/blog/cloudstack-arm64-kvm/
+* Note: If ACS rpms aren't installing, such as case with cloudstack-common, try `rpm -ivh cloudstack-common*.rpm --nodeps`
 * Note: before deploying the zone, please seed the ARM64/aarch64 systemvmtemplate on the NFS/secondary storage. Such as: https://download.cloudstack.org/systemvm/4.20/systemvmtemplate-4.20.0-aarch64-kvm.qcow2.bz2 for ACS 4.20.0.
